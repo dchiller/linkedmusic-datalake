@@ -16,9 +16,9 @@
  limitations under the License.
 -->
 <schema name="linkedmusic-datalake-test" version="2.0">
-    <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
-    <uniqueKey>id</uniqueKey>
-    <field name="type" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="@id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <uniqueKey>@id</uniqueKey>
+    <field name="@type" type="string" indexed="true" stored="true" required="true" multiValued="true" />
     <field name="_version_" type="long" indexed="true" stored="true" />
     <field name="_root_" type="string" indexed="true" stored="true"  multiValued="false" />
     <fieldType name="_nest_path_" class="solr.NestPathField" />
