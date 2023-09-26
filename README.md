@@ -1,4 +1,4 @@
-# Linked Music Data Lake
+# LinkedMusic Data Lake
 
 # Indexing and Searching
 
@@ -33,4 +33,3 @@ To delete indexed documents:
 >>> from index_data import delete_all_docs
 >>> delete_all_docs()
 ```
-
