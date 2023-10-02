@@ -1,0 +1,36 @@
+<style>
+.basic-search-form {
+  display: table;
+}
+
+.basic-search-field {
+  display: table-row;
+}
+
+.field-label,
+.field-input {
+  display: table-cell;
+  margin-bottom: 10px;
+}
+
+.field-label {
+  padding-right: 10px;
+}
+</style>
+<form action="" class="basic-search-form">
+    <div class="basic-search-field">
+        <label for="search-field" class="field-label">Search field</label>
+        <select id="pet-select" class="field-input">
+            <option value="">--Please choose an option--</option>
+            <option value="Composer">Composer</option>
+            <option value="Publisher">Publisher</option>
+          </select>
+    </div>
+    <div class="basic-search-field">
+        <label for="search-string" class="field-label">Search string</label>
+        <input type="text" name="search-string" id="search-string" class="field-input" />
+    </div>
+    <div class="basic-search-field">
+        <input type="submit" value="Search" />
+    </div>
+</form>
