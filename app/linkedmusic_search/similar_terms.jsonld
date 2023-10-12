@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "P460": "http://www.wikidata.org/prop/direct/P460"
+  },
+  "@graph": [
+    {
+      "@id": "http://www.wikidata.org/prop/direct/P826",
+      "P460": [
+        {
+          "@id": "http://www.wikidata.org/entity/Q731978"
+        },
+        {
+          "@id": "http://www.wikidata.org/entity/Q4484726"
+        }
+      ]
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q731978",
+      "P460": [
+        {
+          "@id": "http://www.wikidata.org/prop/direct/P826"
+        },
+        {
+          "@id": "http://www.wikidata.org/entity/Q4484726"
+        }
+      ]
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q4484726",
+      "P460": [
+        {
+          "@id": "http://www.wikidata.org/prop/direct/P826"
+        },
+        {
+          "@id": "http://www.wikidata.org/entity/Q731978"
+        }
+      ]
+    }
+  ]
+}

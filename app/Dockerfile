@@ -1,9 +1,17 @@
-FROM python:3.11
-RUN mkdir /app
-COPY ./requirements.txt /app/requirements.txt
+FROM python:3.11.5 as build-container
+ENV POETRY_VIRTUALENVS_IN_PROJECT=true \
+    POETRY_VIRTUALENVS_OPTIONS_NO_SETUPTOOLS=true \
+    POETRY_VIRTUALENVS_OPTIONS_NO_PIP=true
+COPY ./poetry.lock ./pyproject.toml  /app/
+RUN pip install poetry==1.6.1
 WORKDIR /app
-RUN pip install -r requirements.txt
-COPY ./linkedmusic_search /app/linkedmusic_search
+RUN poetry install --without dev
+
+FROM python:3.11.5 as app-container
+WORKDIR /app
+COPY --from=build-container /app/.venv /app/.venv
+COPY ./app/linkedmusic_search /app/linkedmusic_search
+ENV PYTHONPATH="$PYTHONPATH:/app/.venv/lib/python3.11/site-packages/" \
+    PATH="$PATH:/app/.venv/bin/"
 EXPOSE 5000
 WORKDIR /app/linkedmusic_search
-CMD ["flask", "run", "--debug", "--host=0.0.0.0"]
