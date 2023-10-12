@@ -1,0 +1,14 @@
+services:
+  solr:
+    build: ./solr
+    ports:
+      - "8983:8983"
+    command: [ "solr", "start", "-f" ]
+
+  app:
+    build:
+      context: .
+      dockerfile: ./app/Dockerfile
+    ports:
+      - "5000:5000"
+    command: [ "flask", "run", "--debug", "--host=0.0.0.0" ]
