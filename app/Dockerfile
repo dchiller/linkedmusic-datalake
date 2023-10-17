@@ -10,7 +10,6 @@ RUN poetry install --without dev
 FROM python:3.11.5 as app-container
 WORKDIR /app
 COPY --from=build-container /app/.venv /app/.venv
-COPY ./app/linkedmusic_search /app/linkedmusic_search
 ENV PYTHONPATH="$PYTHONPATH:/app/.venv/lib/python3.11/site-packages/" \
     PATH="$PATH:/app/.venv/bin/"
 EXPOSE 5000

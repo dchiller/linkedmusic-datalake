@@ -18,8 +18,7 @@
 <schema name="linkedmusic-datalake-test" version="2.0">
     <field name="@id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
     <uniqueKey>@id</uniqueKey>
-    <field name="@type" type="string" indexed="true" stored="true" required="true" multiValued="true" />
-    <field name="@context" type="string" indexed="true" stored="true" required="false" multiValued="false" />
+    <field name="@type" type="string" indexed="true" stored="true" required="true" multiValued="false" />
     <field name="_version_" type="long" indexed="true" stored="true" />
     <field name="_root_" type="string" indexed="true" stored="true"  multiValued="false" />
     <fieldType name="_nest_path_" class="solr.NestPathField" />
@@ -47,7 +46,8 @@
     <dynamicField name="attr_*" type="text_general" indexed="true" stored="true" multiValued="true" />
     <dynamicField name="random_*" type="random" />
 
-    <copyField source="*_t" dest="text_t_hidden" />
+    <copyField source="*_t" dest="text_txt" />
+    <copyField source="*_s" dest="text_ss" />
 
     <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" />

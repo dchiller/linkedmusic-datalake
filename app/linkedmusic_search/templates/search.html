@@ -19,28 +19,80 @@
 </style>
 <form action="" class="basic-search-form">
   <div class="basic-search-field">
-    <label for="search-field" class="field-label">Search type</label>
-    <select name="search-field" id="search-field" class="field-input">
-      {% for field in fields %}
-      <option value="{{ field.field }}">{{ field.display }}</option>
+    <label for="search-field" class="field-label">Search field (optional)</label>
+    <input list="field-list" name="search-field" id="search-field" class="field-input" />
+    <datalist id="field-list">
+    {% for field_id, field_label in avail_fields %}
+      <option data-value="{{ field_id }}" value="{{ field_label }}"></option>
       {% endfor %}
-    </select>
+    </datalist>  
+    </div>
+    <div class="basic-search-field">
+      <label for="search-type" class="field-label">Return type (optional)</label>
+      <select name="search-type" id="search-type" class="field-input">
+        <option value="">All</option>
+        {% for type_id, type_label in avail_types.items() %}
+        <option value="{{ type_id }}">{{ type_label }}</option>
+        {% endfor %}
+      </select>
+    </div>
     <div class="basic-search-field">
       <label for="search-string" class="field-label">Search string</label>
       <input type="text" name="search-string" id="search-string" class="field-input" />
     </div>
+    <input type="hidden" name="field-value" id="hidden-search-field" value="" />
     <div class="basic-search-field">
       <input type="submit" value="Search" />
     </div>
 </form>
+{% if num_results == 0 %}
+<p>Found {{ num_results }} results</p>
+{% endif %}
 {% if results %}
 <h2>Results</h2>
 <p>Found {{ num_results }} results</p>
+{% if related_search_fields %}
+<p>Found related search fields:
 <ul>
-  {% for result in results %}
-  <li>
-    <a href="{{ result }}">{{ result }}</a>
-  </li>
-  {% endfor %}
+{% for field_id, field_label in related_search_fields.items() %}
+  <li>{{ field_label }}</li>
+{% endfor %}
 </ul>
+<a href="/?search-field=&search-type={{ search_type }}&search-string={{ search_string }}&search-value={{ search_field }}&search-value={{ comb_related_search_fields }}">Search related fields</a> 
+</p>
 {% endif %}
+<table>
+<thead>
+<tr>
+  <th>Result Link</th>
+  <th>Result Type</th>
+  <th>Other Metadata</th>
+</tr>
+{% for result in results %}
+<tr>
+  <td><a href="{{ result.link }}">{{ result.link }}</a></td>
+  <td>{{ result.type }}</td>
+  <td>
+    <ul>
+    {% for key, value in result.metadata %}
+      <li>{{ key }}: {{ value }}</li>
+    {% endfor %}
+    </ul>
+  </td>
+</tr>
+{% endfor %}
+</thead>
+</table>
+
+{% endif %}
+
+<script>
+const hiddenSearchField = document.getElementById('hidden-search-field');
+const searchField = document.getElementById('search-field');
+const fieldList = document.getElementById('field-list');
+searchField.addEventListener('input', (e) => {
+  const selectedOptionText = e.target.value;
+  const selectedOption = fieldList.querySelector(`option[value="${selectedOptionText}"]`);
+  hiddenSearchField.value = selectedOption.getAttribute('data-value');
+});
+</script>
