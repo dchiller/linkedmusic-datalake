@@ -123,11 +123,10 @@ def get_available_fields():
         filtered_fields.add(filtered_field)
     filtered_fields = list(filtered_fields)
     field_labels = get_labels(filtered_fields, include_aliases=True)
-    field_label_pairs = []
+    field_label_sets = []
     for field_id, labels in field_labels.items():
-        for label_option in labels:
-            field_label_pairs.append((field_id, label_option))
-    return field_label_pairs
+        field_label_sets.append((field_id, labels[0], ", ".join(labels[1:])))
+    return field_label_sets
 
 
 def get_available_types():

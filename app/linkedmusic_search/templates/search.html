@@ -22,8 +22,8 @@
     <label for="search-field" class="field-label">Search field (optional)</label>
     <input list="field-list" name="search-field" id="search-field" class="field-input" />
     <datalist id="field-list">
-    {% for field_id, field_label in avail_fields %}
-      <option data-value="{{ field_id }}" value="{{ field_label }}"></option>
+    {% for field_id, field_label, field_sublabels in avail_fields %}
+      <option data-value="{{ field_id }}" value="{{ field_label }}" label="{{ field_sublabels }}"></option>
       {% endfor %}
     </datalist>  
     </div>
