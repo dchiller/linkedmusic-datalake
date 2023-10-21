@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "linkedmusic data lake"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+flask = "^3.0.0"
+pyld = "^2.0.3"
+
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.17.7"
+black = "^23.9.1"
+mypy = "^1.5.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
