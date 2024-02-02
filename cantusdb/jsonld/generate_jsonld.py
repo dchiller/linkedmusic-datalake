@@ -1,14 +1,19 @@
 import pandas as pd
 import json
 import re
+import glob
 
 # add the path to your reconciled csv to produce the compact jsonld.
 # to change the context by :
 #       - replace the '@context' key below with another context in the url
 #       - make changes to the file 'context.jsonld' and make sure to push the 
 #         changes on the appropriate branch (make sure the link below match where you host the context)
+fname = glob.glob("../reconciled_cantus_*.csv")
+if not fname:
+    print ("No CSV files found!")
+else:
+    df = pd.read_csv(fname[0])
 
-df = pd.read_csv('../reconciled_cantus_09292023.csv')
 json_data = df.to_json(orient='records')
 parsed_json = json.loads(json_data)
 
@@ -38,20 +43,16 @@ def create_json_compact(js):
         work["@type"] = "wd:Q23072435" #chant
 
         work['database'] = 'cantusdb:'
-        work["composer"] = handle_rec_col(work, "composer")    #composer anonymous
         # work["P1922"] = work.pop("incipit")
 
         work["genre"] = handle_rec_col(work,"genre")
-
-        # work["Q731978"] = f'wd:{work.pop("mode_name")}'
-        work["mode_name"] = handle_rec_col(work, "mode_name")
+        work["mode"] = handle_rec_col(work, "mode")
 
         # work["Q4484726"] = work.pop("finalis") #wikidata Final is closest term to finalis
 
         work["source"] = work.pop("src_link")
 
         work["cantus_id"] = f"https://cantusindex.org/id/{work.pop('cantus_id')}"
-        del work["mode"]
 
         
         for key in list(work.keys()): #clean up nulls
