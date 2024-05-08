@@ -39,6 +39,8 @@ def convert_csv_to_turtle(csv_filename):
             g.add((chant_uri, P_GENRE, genre))
             g.add((chant_uri, P_SRC, src_link))
             
+        csv_file.close()
+            
         return g
 
 
