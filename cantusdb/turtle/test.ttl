@@ -1,0 +1,78 @@
+@prefix ns1: <http://www.wikidata.org/prop/direct/> .
+@prefix ns2: <https://cantusdatabase.org/> .
+
+<https://cantusdatabase.org/chant/467250> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q582093> ;
+    ns1:P1922 "Ad te domine levavi animam" ;
+    ns2:sources <https://cantusdatabase.org/source/123730> .
+
+<https://cantusdatabase.org/chant/557534> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q604748> ;
+    ns1:P1922 "Si diligis me Simon Petre" ;
+    ns2:sources <https://cantusdatabase.org/source/123716> .
+
+<https://cantusdatabase.org/chant/560432> a ns1:chant ;
+    ns1:P136 "Responsory verse" ;
+    ns1:P1922 "Loquetur pacem gentibus et potestas " ;
+    ns2:sources <https://cantusdatabase.org/source/123756> .
+
+<https://cantusdatabase.org/chant/560736> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q604748> ;
+    ns1:P1922 "Stephanus servus dei quem lapidabant " ;
+    ns2:sources <https://cantusdatabase.org/source/123756> .
+
+<https://cantusdatabase.org/chant/561208> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q582093> ;
+    ns1:P1922 "Naturae genitor conserva morte redemptos " ;
+    ns2:sources <https://cantusdatabase.org/source/123756> .
+
+<https://cantusdatabase.org/chant/561604> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q604748> ;
+    ns1:P1922 "Veni hodie ad fontem aquae " ;
+    ns2:sources <https://cantusdatabase.org/source/123756> .
+
+<https://cantusdatabase.org/chant/561787> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q582093> ;
+    ns1:P1922 "Pater Abraham miserere mei et " ;
+    ns2:sources <https://cantusdatabase.org/source/123756> .
+
+<https://cantusdatabase.org/chant/562160> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q604748> ;
+    ns1:P1922 "Seniores populi consilium fecerunt ut " ;
+    ns2:sources <https://cantusdatabase.org/source/123756> .
+
+<https://cantusdatabase.org/chant/562633> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q582093> ;
+    ns1:P1922 "Ecce nunc palam loqueris et " ;
+    ns2:sources <https://cantusdatabase.org/source/123756> .
+
+<https://cantusdatabase.org/chant/638197> a ns1:chant ;
+    ns1:P136 "Dramatic element (used for items of liturgical drama that are not otherwise rubricked)" ;
+    ns1:P1922 "In mente altissimi o Satana " ;
+    ns2:sources <https://cantusdatabase.org/source/588308> .
+
+<https://cantusdatabase.org/chant/669638> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q604748> ;
+    ns1:P1922 "Hic est beatissimus evangelista et " ;
+    ns2:sources <https://cantusdatabase.org/source/669163> .
+
+<https://cantusdatabase.org/chant/670564> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q582093> ;
+    ns1:P1922 "Sit nomen domini benedictum in " ;
+    ns2:sources <https://cantusdatabase.org/source/669163> .
+
+<https://cantusdatabase.org/chant/670715> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q582093> ;
+    ns1:P1922 "Dives ille guttam aquae petiit " ;
+    ns2:sources <https://cantusdatabase.org/source/669163> .
+
+<https://cantusdatabase.org/chant/671551> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q582093> ;
+    ns1:P1922 "Dominus tamquam ovis ad victimam " ;
+    ns2:sources <https://cantusdatabase.org/source/669163> .
+
+<https://cantusdatabase.org/chant/704158> a ns1:chant ;
+    ns1:P136 <http://www.wikidata.org/entity/Q582093> ;
+    ns1:P1922 "Ponens Petrus genua sua oravit " ;
+    ns2:sources <https://cantusdatabase.org/source/702611> .
+
